@@ -1,0 +1,10 @@
+{
+  "description": "Analyze satellite images by asking natural language questions to detect objects, changes, and get AI-powered insights with confidence and evidence.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

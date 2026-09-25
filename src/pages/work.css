@@ -1,0 +1,95 @@
+.analysis-workspace {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 12% 18%,
+      rgba(24, 92, 150, 0.28) 0%,
+      rgba(24, 92, 150, 0.12) 18%,
+      transparent 42%
+    ),
+    radial-gradient(
+      circle at 88% 12%,
+      rgba(91, 52, 150, 0.24) 0%,
+      rgba(91, 52, 150, 0.10) 20%,
+      transparent 42%
+    ),
+    radial-gradient(
+      circle at 55% 90%,
+      rgba(15, 76, 130, 0.20) 0%,
+      transparent 40%
+    ),
+    linear-gradient(
+      135deg,
+      #020617 0%,
+      #030a16 35%,
+      #06101f 70%,
+      #020617 100%
+    );
+}
+
+/* Space atmosphere */
+.analysis-workspace::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+
+  background:
+    radial-gradient(
+      ellipse at 30% 45%,
+      rgba(32, 120, 190, 0.08),
+      transparent 45%
+    ),
+    radial-gradient(
+      ellipse at 75% 55%,
+      rgba(110, 65, 180, 0.07),
+      transparent 45%
+    );
+}
+
+/* Stars */
+.analysis-workspace::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+
+  background-image:
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.75) 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle,
+      rgba(125, 190, 255, 0.55) 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.35) 1px,
+      transparent 1.5px
+    );
+
+  background-size:
+    140px 140px,
+    210px 210px,
+    310px 310px;
+
+  background-position:
+    20px 30px,
+    80px 120px,
+    150px 60px;
+
+  opacity: 0.38;
+}
+
+/* Keep the existing workspace above the space background */
+.analysis-workspace > * {
+  position: relative;
+  z-index: 1;
+}

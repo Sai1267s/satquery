@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --color-navy-950: #0A0F1E;
+  --color-navy-900: #0F172A;
+  --color-navy-800: #1E293B;
+  --color-navy-700: #334155;
+  --color-navy-600: #475569;
+  --color-navy-400: #94A3B8;
+  --color-navy-200: #E2E8F0;
+  --color-navy-100: #F1F5F9;
+  --color-navy-50: #F8FAFC;
+
+  --color-teal-700: #0F766E;
+  --color-teal-600: #0D9488;
+  --color-teal-500: #14B8A6;
+  --color-teal-400: #2DD4BF;
+  --color-teal-100: #CCFBF1;
+  --color-teal-50: #F0FDFA;
+
+  --color-violet-700: #6D28D9;
+  --color-violet-600: #7C3AED;
+  --color-violet-500: #8B5CF6;
+  --color-violet-100: #EDE9FE;
+  --color-violet-50: #F5F3FF;
+
+  --color-amber-500: #F59E0B;
+  --color-amber-100: #FEF3C7;
+  --color-amber-50: #FFFBEB;
+
+  --color-emerald-500: #10B981;
+  --color-emerald-100: #D1FAE5;
+
+  --color-red-500: #EF4444;
+  --color-red-100: #FEE2E2;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #F8FAFC;
+  color: #0F172A;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #CBD5E1 transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 99px;
+}
+
+
+/* SATQUERY visual system: consistent deep-space environment across every page */
+html, body, #root {
+  min-height: 100%;
+  margin: 0;
+}
+body {
+  background:
+    radial-gradient(circle at 15% 18%, rgba(34, 211, 238, 0.10), transparent 24%),
+    radial-gradient(circle at 82% 24%, rgba(124, 58, 237, 0.12), transparent 28%),
+    radial-gradient(circle at 52% 88%, rgba(37, 99, 235, 0.10), transparent 26%),
+    linear-gradient(180deg, #020617 0%, #030b1c 48%, #020617 100%);
+  background-attachment: fixed;
+  color: #e2e8f0;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  opacity: .48;
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,.8) 0 1px, transparent 1.5px),
+    radial-gradient(circle, rgba(125,211,252,.65) 0 1px, transparent 1.5px),
+    linear-gradient(rgba(56,189,248,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56,189,248,.035) 1px, transparent 1px);
+  background-size: 137px 137px, 211px 211px, 72px 72px, 72px 72px;
+  background-position: 12px 20px, 72px 84px, 0 0, 0 0;
+}
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background: radial-gradient(ellipse at center, transparent 45%, rgba(0,0,0,.48) 100%);
+}
+.space-page {
+  min-height: 100vh;
+  background: transparent !important;
+}
+.analysis-page {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(48, 104, 180, 0.18),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 85% 15%,
+      rgba(80, 50, 160, 0.16),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 50% 85%,
+      rgba(25, 90, 150, 0.12),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #020617 0%,
+      #050b18 45%,
+      #07111f 100%
+    );
+}
+
+/* Star field */
+.analysis-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+
+  background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.75) 1px, transparent 1.5px),
+    radial-gradient(circle, rgba(130, 190, 255, 0.5) 1px, transparent 1.5px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.35) 1px, transparent 1.5px);
+
+  background-size:
+    120px 120px,
+    190px 190px,
+    260px 260px;
+
+  background-position:
+    10px 20px,
+    60px 80px,
+    120px 30px;
+
+  opacity: 0.45;
+}
+
+/* Subtle space grid */
+.analysis-page::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(80, 130, 190, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(80, 130, 190, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 70px 70px;
+}
+
+/* Keep analysis content above the background */
+.analysis-page > * {
+  position: relative;
+  z-index: 1;
+}
+.analysis-workspace {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(48, 104, 180, 0.18),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 85% 15%,
+      rgba(80, 50, 160, 0.16),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 50% 85%,
+      rgba(25, 90, 150, 0.12),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #020617 0%,
+      #050b18 45%,
+      #07111f 100%
+    );
+}
+
+/* Space stars */
+.analysis-workspace::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+
+  background-image:
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.75) 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle,
+      rgba(130, 190, 255, 0.5) 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.35) 1px,
+      transparent 1.5px
+    );
+
+  background-size:
+    120px 120px,
+    190px 190px,
+    260px 260px;
+
+  background-position:
+    10px 20px,
+    60px 80px,
+    120px 30px;
+
+  opacity: 0.45;
+}
+
+/* Subtle space grid */
+.analysis-workspace::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(80, 130, 190, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(80, 130, 190, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 70px 70px;
+}
+
+/* Existing workspace content stays above the background */
+.analysis-workspace > * {
+  position: relative;
+  z-index: 1;
+}
